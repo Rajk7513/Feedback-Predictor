@@ -1,0 +1,512 @@
+# Bar plot of Marital Status vs. Feedback Ratio
+ggplot(data, aes(x = Marital.Status, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#66C2A5") +
+labs(x = "Marital Status", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+ylim(0, max(data$Feedback_Ratio) * 1.2)  # Set y-axis limits to start from 0 and go slightly above the maximum value
+# Repeat the process for Occupation
+data <- data %>%
+group_by(Occupation) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Occupation, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#FC8D62") +
+labs(x = "Occupation", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+ylim(0, max(data$Feedback_Ratio) * 1.2)  # Set y-axis limits to start from 0 and go slightly above the maximum value
+# Repeat the process for Educational Qualifications
+data <- data %>%
+group_by(Educational.Qualifications) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Educational.Qualifications, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#8DA0CB") +
+labs(x = "Educational Qualifications", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+ylim(0, max(data$Feedback_Ratio) * 1.2)  # Set y-axis limits to start from 0 and go slightly above the maximum value
+# Finally, repeat the process for the output parameter
+data <- data %>%
+group_by(Output) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Output, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#A6D854") +
+labs(x = "Output", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+ylim(0, max(data$Feedback_Ratio) * 1.2)  # Set y-axis limits to start from 0 and go slightly above the maximum value
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Create positive-to-negative feedback ratio for each parameter
+# Calculate the ratio of positive feedbacks to negative feedbacks for each category within each parameter
+data <- data %>%
+group_by(Marital.Status) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+# Bar plot of Marital Status vs. Feedback Ratio
+ggplot(data, aes(x = Marital.Status, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#66C2A5") +
+labs(x = "Marital Status", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal()
+# Repeat the process for Occupation
+data <- data %>%
+group_by(Occupation) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Occupation, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#FC8D62") +
+labs(x = "Occupation", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal()
+# Repeat the process for Educational Qualifications
+data <- data %>%
+group_by(Educational.Qualifications) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Educational.Qualifications, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#8DA0CB") +
+labs(x = "Educational Qualifications", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal()
+# Finally, repeat the process for the output parameter
+data <- data %>%
+group_by(Output) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Create positive-to-negative feedback ratio for each parameter
+# Calculate the ratio of positive feedbacks to negative feedbacks for each category within each parameter
+data <- data %>%
+group_by(Marital.Status) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+# Bar plot of Marital Status vs. Feedback Ratio
+ggplot(data, aes(x = Marital.Status, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#66C2A5") +
+labs(x = "Marital Status", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+expand_limits(y = 0)
+# Repeat the process for Occupation
+data <- data %>%
+group_by(Occupation) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Occupation, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#FC8D62") +
+labs(x = "Occupation", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+expand_limits(y = 0)
+# Repeat the process for Educational Qualifications
+data <- data %>%
+group_by(Educational.Qualifications) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Educational.Qualifications, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#8DA0CB") +
+labs(x = "Educational Qualifications", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+expand_limits(y = 0)
+# Finally, repeat the process for the output parameter
+data <- data %>%
+group_by(Output) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Output, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#A6D854") +
+labs(x = "Output", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+expand_limits(y = 0)
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Create positive-to-negative feedback ratio for each parameter
+# Calculate the ratio of positive feedbacks to negative feedbacks for each category within each parameter
+data <- data %>%
+group_by(Marital.Status) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+# Bar plot of Marital Status vs. Feedback Ratio
+ggplot(data, aes(x = Marital.Status, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#66C2A5") +
+labs(x = "Marital Status", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+coord_cartesian(ylim = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+# Repeat the process for Occupation
+data <- data %>%
+group_by(Occupation) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Occupation, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#FC8D62") +
+labs(x = "Occupation", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+coord_cartesian(ylim = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+# Repeat the process for Educational Qualifications
+data <- data %>%
+group_by(Educational.Qualifications) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Educational.Qualifications, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#8DA0CB") +
+labs(x = "Educational Qualifications", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+coord_cartesian(ylim = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Create positive-to-negative feedback ratio for each parameter
+# Calculate the ratio of positive feedbacks to negative feedbacks for each category within each parameter
+data <- data %>%
+group_by(Marital.Status) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+# Bar plot of Marital Status vs. Feedback Ratio
+ggplot(data, aes(x = Marital.Status, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#66C2A5") +
+labs(x = "Marital Status", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+scale_y_continuous(limits = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+# Repeat the process for Occupation
+data <- data %>%
+group_by(Occupation) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Occupation, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#FC8D62") +
+labs(x = "Occupation", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+scale_y_continuous(limits = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+# Repeat the process for Educational Qualifications
+data <- data %>%
+group_by(Educational.Qualifications) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Educational.Qualifications, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#8DA0CB") +
+labs(x = "Educational Qualifications", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+scale_y_continuous(limits = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+# Finally, repeat the process for the output parameter
+data <- data %>%
+group_by(Output) %>%
+mutate(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(data, aes(x = Output, y = Feedback_Ratio)) +
+geom_bar(stat = "identity", fill = "#A6D854") +
+labs(x = "Output", y = "Feedback Ratio (Positive/Negative)") +
+theme_minimal() +
+scale_y_continuous(limits = c(0, max(data$Feedback_Ratio, na.rm = TRUE) * 1.1))
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Create positive-to-negative feedback ratio for each parameter
+# Calculate the ratio of positive feedbacks to negative feedbacks for each category within each parameter
+marital_data <- aggregate(Feedback ~ Marital.Status, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+occupation_data <- aggregate(Feedback ~ Occupation, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+edu_data <- aggregate(Feedback ~ Educational.Qualifications, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+output_data <- aggregate(Feedback ~ Output, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+# Plot for Marital Status
+barplot(marital_data$Feedback, names.arg = marital_data$Marital.Status,
+main = "Feedback Ratio by Marital Status",
+xlab = "Marital Status", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#66C2A5")
+# Plot for Occupation
+barplot(occupation_data$Feedback, names.arg = occupation_data$Occupation,
+main = "Feedback Ratio by Occupation",
+xlab = "Occupation", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#FC8D62")
+# Plot for Educational Qualifications
+barplot(edu_data$Feedback, names.arg = edu_data$Educational.Qualifications,
+main = "Feedback Ratio by Educational Qualifications",
+xlab = "Educational Qualifications", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#8DA0CB")
+# Plot for Output
+barplot(output_data$Feedback, names.arg = output_data$Output,
+main = "Feedback Ratio by Output",
+xlab = "Output", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#A6D854")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Create positive-to-negative feedback ratio for each parameter
+# Calculate the ratio of positive feedbacks to negative feedbacks for each category within each parameter
+marital_data <- aggregate(Feedback ~ Marital.Status, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+occupation_data <- aggregate(Feedback ~ Occupation, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+edu_data <- aggregate(Feedback ~ Educational.Qualifications, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+output_data <- aggregate(Feedback ~ Output, data, function(x) sum(x == "Positive") / sum(x == "Negative"))
+# Print aggregated data frames
+print(marital_data)
+print(occupation_data)
+print(edu_data)
+print(output_data)
+# Plot for Marital Status
+barplot(marital_data$Feedback, names.arg = marital_data$Marital.Status,
+main = "Feedback Ratio by Marital Status",
+xlab = "Marital Status", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#66C2A5")
+# Plot for Occupation
+barplot(occupation_data$Feedback, names.arg = occupation_data$Occupation,
+main = "Feedback Ratio by Occupation",
+xlab = "Occupation", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#FC8D62")
+# Plot for Educational Qualifications
+barplot(edu_data$Feedback, names.arg = edu_data$Educational.Qualifications,
+main = "Feedback Ratio by Educational Qualifications",
+xlab = "Educational Qualifications", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#8DA0CB")
+# Plot for Output
+barplot(output_data$Feedback, names.arg = output_data$Output,
+main = "Feedback Ratio by Output",
+xlab = "Output", ylab = "Feedback Ratio (Positive/Negative)",
+col = "#A6D854")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+library(ggplot2)
+# Scatter plot of Age vs. Feedback
+ggplot(data, aes(x = Age, y = Feedback)) +
+geom_point() +
+labs(x = "Age", y = "Feedback")
+# Box plot of Gender vs. Feedback
+ggplot(data, aes(x = Gender, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Gender", y = "Feedback")
+# Box plot of Marital Status vs. Feedback
+ggplot(data, aes(x = Marital.Status, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Marital Status", y = "Feedback")
+# Box plot of Occupation vs. Feedback
+ggplot(data, aes(x = Occupation, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Occupation", y = "Feedback")
+# Box plot of Monthly Income vs. Feedback
+ggplot(data, aes(x = Monthly.Income, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Monthly Income", y = "Feedback")
+# Box plot of Educational Qualifications vs. Feedback
+ggplot(data, aes(x = Educational.Qualifications, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Educational Qualifications", y = "Feedback")
+# Box plot of Duration of Employement vs. Feedback
+ggplot(data, aes(x = Output, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Output", y = "Feedback")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+library(ggplot2)
+# Calculate positive-to-negative feedback ratio for each parameter
+# Function to calculate ratio
+calculate_ratio <- function(feedback) {
+pos_count <- sum(feedback == "Positive")
+neg_count <- sum(feedback == "Negative")
+ratio <- pos_count / neg_count
+return(ratio)
+}
+# Aggregate data by parameter and calculate ratio
+age_data <- aggregate(Feedback ~ Age, data, calculate_ratio)
+gender_data <- aggregate(Feedback ~ Gender, data, calculate_ratio)
+marital_data <- aggregate(Feedback ~ Marital.Status, data, calculate_ratio)
+occupation_data <- aggregate(Feedback ~ Occupation, data, calculate_ratio)
+income_data <- aggregate(Feedback ~ Monthly.Income, data, calculate_ratio)
+edu_data <- aggregate(Feedback ~ Educational.Qualifications, data, calculate_ratio)
+output_data <- aggregate(Feedback ~ Output, data, calculate_ratio)
+# Scatter plot of Age vs. Feedback Ratio
+ggplot(age_data, aes(x = Age, y = Feedback)) +
+geom_point() +
+labs(x = "Age", y = "Feedback Ratio")
+# Box plot of Gender vs. Feedback Ratio
+ggplot(gender_data, aes(x = Gender, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Gender", y = "Feedback Ratio")
+# Box plot of Marital Status vs. Feedback Ratio
+ggplot(marital_data, aes(x = Marital.Status, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Marital Status", y = "Feedback Ratio")
+# Box plot of Occupation vs. Feedback Ratio
+ggplot(occupation_data, aes(x = Occupation, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Occupation", y = "Feedback Ratio")
+# Box plot of Monthly Income vs. Feedback Ratio
+ggplot(income_data, aes(x = Monthly.Income, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Monthly Income", y = "Feedback Ratio")
+# Box plot of Educational Qualifications vs. Feedback Ratio
+ggplot(edu_data, aes(x = Educational.Qualifications, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Educational Qualifications", y = "Feedback Ratio")
+# Box plot of Output vs. Feedback Ratio
+ggplot(output_data, aes(x = Output, y = Feedback)) +
+geom_boxplot() +
+labs(x = "Output", y = "Feedback Ratio")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+library(ggplot2)
+# Calculate positive-to-negative feedback ratio for each category within each parameter
+ratio_data <- data %>%
+group_by(Age) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+# Scatter plot of Age vs. Feedback Ratio
+ggplot(ratio_data, aes(x = Age, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Age", y = "Feedback Ratio (Positive/Negative)")
+# Repeat the process for Gender
+ratio_data <- data %>%
+group_by(Gender) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(ratio_data, aes(x = Gender, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Gender", y = "Feedback Ratio (Positive/Negative)")
+# Repeat the process for Marital Status
+ratio_data <- data %>%
+group_by(Marital.Status) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(ratio_data, aes(x = Marital.Status, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Marital Status", y = "Feedback Ratio (Positive/Negative)")
+# Repeat the process for Occupation
+ratio_data <- data %>%
+group_by(Occupation) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(ratio_data, aes(x = Occupation, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Occupation", y = "Feedback Ratio (Positive/Negative)")
+# Repeat the process for Monthly Income (or any other numerical parameter)
+ratio_data <- data %>%
+group_by(Monthly.Income) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(ratio_data, aes(x = Monthly.Income, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Monthly Income", y = "Feedback Ratio (Positive/Negative)")
+# Repeat the process for Educational Qualifications
+ratio_data <- data %>%
+group_by(Educational.Qualifications) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(ratio_data, aes(x = Educational.Qualifications, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Educational Qualifications", y = "Feedback Ratio (Positive/Negative)")
+# Repeat the process for Output
+ratio_data <- data %>%
+group_by(Output) %>%
+summarise(Feedback_Ratio = sum(Feedback == "Positive") / sum(Feedback == "Negative"))
+ggplot(ratio_data, aes(x = Output, y = Feedback_Ratio)) +
+geom_point() +
+labs(x = "Output", y = "Feedback Ratio (Positive/Negative)")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+library(dplyr)
+library(ggplot2)
+# Assuming your data is in a data frame named 'data'
+# Function to calculate and plot the ratio of positive to negative feedbacks for a given category
+plot_feedback_ratio <- function(data, category) {
+data <- data %>%
+group_by(!!sym(category)) %>%
+mutate(PositiveNegativeRatio = sum(Feedback == 1) / sum(Feedback == 0)) %>%
+ungroup()
+ggplot(data, aes_string(x = category, y = "PositiveNegativeRatio")) +
+geom_point() +
+labs(x = category, y = "Positive vs. Negative Feedback Ratio")
+}
+# List of categories to plot
+categories <- c("Age", "Gender", "Marital.Status", "Occupation", "Monthly.Income", "Educational.Qualifications", "Output")
+# Plot for each category
+for (category in categories) {
+plot_feedback_ratio(data, category)
+}
+plot_feedback_ratio(data, category)
+library(dplyr)
+library(ggplot2)
+# Assuming your data is in a data frame named 'data'
+# Function to calculate and plot the ratio of positive to negative feedbacks for a given category
+plot_feedback_ratio <- function(data, category) {
+data <- data %>%
+group_by(!!sym(category)) %>%
+mutate(PositiveNegativeRatio = sum(Feedback == 1) / sum(Feedback == 0)) %>%
+ungroup()
+ggplot(data, aes_string(x = category, y = "PositiveNegativeRatio")) +
+geom_point() +
+labs(x = category, y = "Positive vs. Negative Feedback Ratio")
+}
+# List of categories to plot
+categories <- c("Age", "Gender", "Marital.Status", "Occupation", "Monthly.Income", "Educational.Qualifications", "Output")
+# Plot for each category
+for (category in categories) {
+plot_feedback_ratio(data, category)
+}
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Load your data
+data <- read.csv("onlinefoods.csv")
+# Convert Feedback to binary if it's not already
+data$FeedbackBinary <- ifelse(data$Feedback == "Positive", 1, 0)
+# Function to calculate and plot the ratio of positive to negative feedbacks for a given category
+plot_feedback_ratio <- function(data, category) {
+data <- data %>%
+group_by(!!sym(category)) %>%
+mutate(PositiveNegativeRatio = sum(FeedbackBinary == 1) / sum(FeedbackBinary == 0)) %>%
+ungroup()
+ggplot(data, aes_string(x = category, y = "PositiveNegativeRatio")) +
+geom_point() +
+labs(x = category, y = "Positive vs. Negative Feedback Ratio")
+}
+# List of categories to plot
+categories <- c("Age", "Gender", "Marital.Status", "Occupation", "Monthly.Income", "Educational.Qualifications", "Family.size", "latitude", "longitude", "Pin.code", "Output")
+# Plot for each category
+for (category in categories) {
+plot_feedback_ratio(data, category)
+}
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Load your data
+data <- read.csv("onlinefoods.csv")
+# Convert Feedback to binary if it's not already
+data$FeedbackBinary <- ifelse(data$Feedback == "Positive", 1, 0)
+# Function to calculate and plot the ratio of positive to negative feedbacks for a given category
+plot_feedback_ratio <- function(data, category) {
+data <- data %>%
+group_by(!!sym(category)) %>%
+mutate(PositiveNegativeRatio = sum(FeedbackBinary == 1) / sum(FeedbackBinary == 0)) %>%
+ungroup()
+ggplot(data, aes_string(x = category, y = "PositiveNegativeRatio")) +
+geom_point() +
+labs(x = category, y = "Positive vs. Negative Feedback Ratio")
+}
+# List of categories to plot
+categories <- c("Age", "Gender", "Marital.Status", "Occupation", "Monthly.Income", "Educational.Qualifications", "Family.size", "latitude", "longitude", "Pin.code", "Output")
+plot_feedback_ratio(data, categories[10])
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+plot_feedback_ratio(data, categories[11])
+plot_feedback_ratio(data, categories[11])
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Load your data
+data <- read.csv("onlinefoods.csv")
+# Convert Feedback to binary if it's not already
+data$FeedbackBinary <- ifelse(data$Feedback == "Positive", 1, 0)
+# Function to calculate and plot the ratio of positive to negative feedbacks for a given category
+plot_feedback_ratio <- function(data, category) {
+data <- data %>%
+group_by(!!sym(category)) %>%
+mutate(PositiveNegativeRatio = sum(FeedbackBinary == 1) / sum(FeedbackBinary == 0)) %>%
+ungroup()
+ggplot(data, aes_string(x = category, y = "PositiveNegativeRatio")) +
+geom_bar(stat = "identity", fill = "steelblue") +
+labs(x = category, y = "Positive vs. Negative Feedback Ratio") +
+theme_minimal()
+}
+# List of categories to plot
+categories <- c("Age", "Gender", "Marital.Status", "Occupation", "Monthly.Income", "Educational.Qualifications", "Family.size", "latitude", "longitude", "Pin.code", "Output")
+plot_feedback_ratio(data, categories[11])
+source("D:/Uni Resources/Data 101/Project Component 2/stuff.R")
+# Load necessary libraries
+library(dplyr)
+library(ggplot2)
+# Load your data
+data <- read.csv("onlinefoods.csv")
+# Convert Feedback to binary if it's not already
+data$FeedbackBinary <- ifelse(data$Feedback == "Positive", 1, 0)
+# Function to calculate and plot the ratio of positive to negative feedbacks for a given category
+plot_feedback_ratio <- function(data, category) {
+data <- data %>%
+group_by(!!sym(category)) %>%
+mutate(PositiveNegativeRatio = sum(FeedbackBinary == 1) / sum(FeedbackBinary == 0)) %>%
+ungroup()
+ggplot(data, aes_string(x = category, y = "PositiveNegativeRatio")) +
+geom_bar(stat = "identity", fill = "steelblue") +
+labs(x = category, y = "Positive vs. Negative Feedback Ratio") +
+theme_minimal()
+}
+# List of categories to plot
+categories <- c("Age", "Gender", "Marital.Status", "Occupation", "Monthly.Income", "Educational.Qualifications", "Family.size", "latitude", "longitude", "Pin.code", "Output")
+plot_feedback_ratio(data, categories[11])
+plot_feedback_ratio(data, categories[1])
+plot_feedback_ratio(data, categories[2])
+plot_feedback_ratio(data, categories[3])
+plot_feedback_ratio(data, categories[4])
+plot_feedback_ratio(data, categories[4])
+plot_feedback_ratio(data, categories[5])
+plot_feedback_ratio(data, categories[6])
+plot_feedback_ratio(data, categories[7])
